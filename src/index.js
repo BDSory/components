@@ -7,13 +7,27 @@ import ReactDOM from 'react-dom';
 import {createRoot} from 'react-dom/client';
 import faker from 'faker';
 import CommentDetail from './CommentDetail';
-//note that: prop author is on an instance of CommDet; each is unique.
+import ApprovalCard from './ApprovalCard';
+//note that: prop author is on an instance of CommDet; each is unique. The flow  is,
+//info from parent to child, child (CommentDetail here) ref's prop arg
+//add. note: the CommentDetail component is now itself a prop on ApprovalCard. 
 const App = () => {
   return (
     <div className="ui container comments">
-  
-      <CommentDetail author="Sam" aids="ohNo!" />
-      <CommentDetail author="Alice"/>
+      <ApprovalCard >
+        <CommentDetail 
+          author="Sam" 
+          timeAgo="Today at 4:45pm" 
+          comment="Way to go!"
+          avatar={faker.image.image()}
+        />
+      </ApprovalCard>
+      <CommentDetail 
+        author="Alice" 
+        timeAgo="Today at 6:23pm" 
+        comment="ExplainME"
+        avatar={faker.image.image()}  
+      />
       
     </div>
   )
