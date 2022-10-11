@@ -1,6 +1,6 @@
 //<img alt="avatar" src={faker.image.image()} />
 //when you need it...
-
+import './App.css'
 import React from 'react';
 import ReactDOM from 'react-dom';
 //delete next line and revert the render if stop using createRoot
@@ -22,13 +22,15 @@ const App = () => {
           avatar={faker.image.image()}
         />
       </ApprovalCard>
-      <CommentDetail 
-        author="Alice" 
-        timeAgo="Today at 6:23pm" 
-        comment="ExplainME"
-        avatar={faker.image.image()}  
-      />
-      
+      <ApprovalCard >
+        <CommentDetail 
+          author="Alice" 
+          timeAgo="Today at 6:23pm" 
+          comment="ExplainME"
+          avatar={faker.image.image()}  
+        />
+      </ApprovalCard>
+
     </div>
   )
 }
