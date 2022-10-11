@@ -7,14 +7,14 @@ import ReactDOM from 'react-dom';
 import {createRoot} from 'react-dom/client';
 import faker from 'faker';
 import CommentDetail from './CommentDetail';
-
+//note that: prop author is on an instance of CommDet; each is unique.
 const App = () => {
   return (
     <div className="ui container comments">
-      <CommentDetail />
-      <CommentDetail />
-      <CommentDetail />
-      <CommentDetail />
+  
+      <CommentDetail author="Sam" aids="ohNo!" />
+      <CommentDetail author="Alice"/>
+      
     </div>
   )
 }
