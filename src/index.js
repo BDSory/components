@@ -1,60 +1,25 @@
 //<img alt="avatar" src={faker.image.image()} />
 //when you need it...
 
-import  React from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
+//delete next line and revert the render if stop using createRoot
+import {createRoot} from 'react-dom/client';
 import faker from 'faker';
+import CommentDetail from './CommentDetail';
 
 const App = () => {
   return (
     <div className="ui container comments">
-      <div className="comment">
-        <a href="/" className="avatar">
-          <img alt="avatar" src={faker.image.image()} />
-        </a>
-        <div className="content">
-          <a href="/" className="author">
-            Sam
-          </a>
-          <div className="metadata">
-            <span className="date">Today at 6:00pm</span>
-          </div>
-          <div className="test">Nice blog post!</div>
-        </div>
-      </div>
-
-      <div className="comment">
-        <a href="/" className="avatar">
-          <img alt="avatar" src={faker.image.image()} />
-        </a>
-        <div className="content">
-          <a href="/" className="author">
-            Sam
-          </a>
-          <div className="metadata">
-            <span className="date">Today at 6:00pm</span>
-          </div>
-          <div className="test">Nice blog post!</div>
-        </div>
-      </div>
-
-      <div className="comment">
-        <a href="/" className="avatar">
-          <img alt="avatar" src={faker.image.image()} />
-        </a>
-        <div className="content">
-          <a href="/" className="author">
-            Sam
-          </a>
-          <div className="metadata">
-            <span className="date">Today at 6:00pm</span>
-          </div>
-          <div className="test">Nice blog post!</div>
-        </div>
-      </div>
-
+      <CommentDetail />
+      <CommentDetail />
+      <CommentDetail />
+      <CommentDetail />
     </div>
   )
 }
 
-ReactDOM.render(<App />, document.querySelector('#root'));
+//ReactDOM.render(<App />, document.querySelector('#root'));
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(<App tab="home" />);
